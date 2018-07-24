@@ -1,0 +1,36 @@
+{
+    "CloudVisionApi": {
+        "label": {
+            "service": "Service",
+            "method": "Method",
+            "host": "Host",
+            "header": "Header",
+            "value": "Value",
+            "isQuery": "isQuery"
+        },
+        "status": {
+            "requesting": "requesting"
+        },
+        "parameters": {
+            "visionfilesasyncBatchAnnotate": "visionfilesasyncBatchAnnotate",
+            "body": "body",
+            "key": "key",
+            "accessToken": "accessToken",
+            "uploadProtocol": "uploadProtocol",
+            "quotaUser": "quotaUser",
+            "prettyPrint": "prettyPrint",
+            "uploadType": "uploadType",
+            "fields": "fields",
+            "callback": "callback",
+            "oauthToken": "oauthToken",
+            "xgafv": "xgafv",
+            "alt": "alt",
+            "visionimagesannotate": "visionimagesannotate",
+            "visionoperationsdelete": "visionoperationsdelete",
+            "name": "name",
+            "visionlocationsoperationsget": "visionlocationsoperationsget",
+            "visionoperationscancel": "visionoperationscancel",
+            "optionalParameters": "Options"
+        }
+    }
+}

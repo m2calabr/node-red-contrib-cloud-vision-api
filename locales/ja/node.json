@@ -1,0 +1,36 @@
+{
+    "CloudVisionApi": {
+        "label": {
+            "service": "サービス",
+            "method": "メソッド",
+            "host": "ホスト",
+            "header": "ヘッダ",
+            "value": "値",
+            "isQuery": "クエリ"
+        },
+        "status": {
+            "requesting": "要求中"
+        },
+        "parameters": {
+            "visionfilesasyncBatchAnnotate": "visionfilesasyncBatchAnnotate",
+            "body": "body",
+            "key": "key",
+            "accessToken": "accessToken",
+            "uploadProtocol": "uploadProtocol",
+            "quotaUser": "quotaUser",
+            "prettyPrint": "prettyPrint",
+            "uploadType": "uploadType",
+            "fields": "fields",
+            "callback": "callback",
+            "oauthToken": "oauthToken",
+            "xgafv": "xgafv",
+            "alt": "alt",
+            "visionimagesannotate": "visionimagesannotate",
+            "visionoperationsdelete": "visionoperationsdelete",
+            "name": "name",
+            "visionlocationsoperationsget": "visionlocationsoperationsget",
+            "visionoperationscancel": "visionoperationscancel",
+            "optionalParameters": "任意項目"
+        }
+    }
+}
