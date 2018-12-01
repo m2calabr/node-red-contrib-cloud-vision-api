@@ -2,21 +2,21 @@
     "CloudVisionApi": {
         "label": {
             "service": "Service",
-            "method": "Method",
+            "method": "Methode",
             "host": "Host",
             "header": "Header",
-            "value": "Value",
-            "isQuery": "isQuery"
+            "value": "Wert",
+            "isQuery": "Suchanfrage"
         },
         "status": {
-            "requesting": "requesting"
+            "requesting": "Anfrage..."
         },
         "parameters": {
             "annotate": "annotate",
             "body": "body",
             "type": "type",
             "key": "key",
-            "optionalParameters": "Options"
+            "optionalParameters": "Optionen"
         }
     }
 }

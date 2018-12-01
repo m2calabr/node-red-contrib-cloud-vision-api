@@ -12,24 +12,10 @@
             "requesting": "要求中"
         },
         "parameters": {
-            "visionfilesasyncBatchAnnotate": "visionfilesasyncBatchAnnotate",
+            "annotate": "annotate",
             "body": "body",
+            "type": "type",
             "key": "key",
-            "accessToken": "accessToken",
-            "uploadProtocol": "uploadProtocol",
-            "quotaUser": "quotaUser",
-            "prettyPrint": "prettyPrint",
-            "uploadType": "uploadType",
-            "fields": "fields",
-            "callback": "callback",
-            "oauthToken": "oauthToken",
-            "xgafv": "xgafv",
-            "alt": "alt",
-            "visionimagesannotate": "visionimagesannotate",
-            "visionoperationsdelete": "visionoperationsdelete",
-            "name": "name",
-            "visionlocationsoperationsget": "visionlocationsoperationsget",
-            "visionoperationscancel": "visionoperationscancel",
             "optionalParameters": "任意項目"
         }
     }
