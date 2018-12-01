@@ -1,24 +1,30 @@
 <script type="text/javascript">
     RED.nodes.registerType('cloud-vision-api', {
-        category: 'function',
-        color: '#89bf04',
+        category: 'Google Cloud Platform',
+        color: '#4285F4',
         defaults: {
-            method: { value: "", required: true },
+            method: { value: "annotate", required: true },
             annotate_body: { value: "" },
             annotate_bodyType: { value: "str" },
             annotate_type: { value: "" },
             annotate_typeType: { value: "str" },
-            annotate_key: { value: "" },
             annotate_keyType: { value: "str" },
             name: { value: "" }
         },
+        credentials: {
+            annotate_key: {
+               type: "password"
+            }
+        },
         inputs: 1,
         outputs: 1,
-        icon: 'icon.png',
+        icon: 'icon.svg',
         label: function () {
             return this.name || "cloud-vision-api";
         },
         oneditprepare: function () {
+            $("#method").hide(); //hoge
+
             var selectedMethod = $('#node-input-method option:selected');
             if (!selectedMethod.val()) {
                 var methods = $('#node-input-method').children();
@@ -27,7 +33,6 @@
             }
 
             var showParameters = function () {
-
                 $("#node-input-annotate_body").typedInput({
                     default: 'str',
                     typeField: $("#node-input-annotate_bodyType"),
@@ -35,39 +40,20 @@
                 });
 
                 $("#annotate_body").hide();
-
-
                 $("#annotate_type").hide();
-
-                $("#node-input-annotate_key").typedInput({
-                    default: 'str',
-                    typeField: $("#node-input-annotate_keyType"),
-                    types: ['str', 'msg']
-                });
-
                 $("#annotate_key").hide();
-
                 $("#optional-parameters").hide();
                 $("#optional-parameters-label").hide();
-                if ($("#node-input-method").val() === 'annotate') {
-
-                }
 
                 if ($("#optional-parameters").prop('checked')) {
                     if ($("#node-input-method").val() === 'annotate') {
-
                         $("#annotate_type").show();
-                        
                         $("#annotate_key").show();
-                        
                     }
                 } else {
                     if ($("#node-input-method").val() === 'annotate') {
-
                         $("#annotate_type").show();
-                        
                         $("#annotate_key").show();
-                        
                     }
                 }
             };
@@ -92,7 +78,7 @@
 
 <script type="text/x-red" data-template-name="cloud-vision-api">
 
-    <div class="form-row">
+    <div class="form-row" id="method">
         <label for="node-input-method"><i class="icon-tasks"></i> <span data-i18n="CloudVisionApi.label.method"></span></label>
         <select id="node-input-method">
             <option value="annotate" data-i18n="CloudVisionApi.parameters.annotate"></option>
@@ -104,7 +90,6 @@
 
     <div class="form-row" id="annotate_body">
         <label for="node-input-annotate_body"><i class="fa fa-list"></i> <span data-i18n="CloudVisionApi.parameters.body"></span></label>
-
         <input type="text" id="node-input-annotate_body" placeholder="" style="width:70%">
         <input type="hidden" id="node-input-annotate_bodyType">
     </div>
@@ -112,25 +97,17 @@
     <div class="form-row" id="annotate_type">
         <label for="node-input-annotate_type"><i class="fa fa-list"></i> <span data-i18n="CloudVisionApi.parameters.type"></span></label>
         <select id="node-input-annotate_type">
-            <option value="FACE_DETECTION">FACE_DETECTION</option>
-            <option value="LANDMARK_DETECTION">LANDMARK_DETECTION</option>
-            <option value="LOGO_DETECTION">LOGO_DETECTION</option>
-            <option value="LABEL_DETECTION">LABEL_DETECTION</option>
-            <option value="TEXT_DETECTION">TEXT_DETECTION</option>
-            <option value="DOCUMENT_TEXT_DETECTION">DOCUMENT_TEXT_DETECTION</option>
-            <option value="SAFE_SEARCH_DETECTION">SAFE_SEARCH_DETECTION</option>
-            <option value="IMAGE_PROPERTIES">IMAGE_PROPERTIES</option>
-            <option value="CROP_HINTS">CROP_HINTS</option>
-            <option value="WEB_DETECTION">WEB_DETECTION</option>
-            <option value="OBJECT_LOCALIZATION">OBJECT_LOCALIZATION</option>
+            <option value="FACE_DETECTION">Face detection</option>
+            <option value="LANDMARK_DETECTION">Landmark detection</option>
+            <option value="LOGO_DETECTION">Logo detection</option>
+            <option value="LABEL_DETECTION">Label detection</option>
+            <option value="TEXT_DETECTION">Text detection</option>
         </select>
-
     </div>
 
     <div class="form-row" id="annotate_key">
         <label for="node-input-annotate_key"><i class="fa fa-list"></i> <span data-i18n="CloudVisionApi.parameters.key"></span></label>
-
-        <input type="text" id="node-input-annotate_key" placeholder="API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token." style="width:70%">
+        <input type="password" id="node-input-annotate_key" placeholder="API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token." style="width:70%">
         <input type="hidden" id="node-input-annotate_keyType">
     </div>
 
@@ -142,9 +119,5 @@
 </script>
 
 <script type="text/x-red" data-help-name="cloud-vision-api">
-
     <p>Integrates Google Vision features, including image labeling, face, logo, and landmark detection, optical character recognition (OCR), and detection of explicit content, into applications.</p>
-    <h2>Methods</h2>
-        <h3>annotate</h3>
-        <h4>Run image detection and annotation for a batch of images.</h4>
 </script>

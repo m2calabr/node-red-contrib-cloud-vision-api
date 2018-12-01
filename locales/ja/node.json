@@ -14,8 +14,8 @@
         "parameters": {
             "annotate": "annotate",
             "body": "body",
-            "type": "type",
-            "key": "key",
+            "type": "タイプ",
+            "key": "APIキー",
             "optionalParameters": "任意項目"
         }
     }
