@@ -1,7 +1,7 @@
 node-red-contrib-cloud-vision-api
 =====================
 
-Node-RED node for cloud-vision-api
+Node-RED node for Google Cloud Vision API
 
 Integrates Google Vision features, including image labeling, face, logo, and landmark detection, optical character recognition (OCR), and detection of explicit content, into applications.
 
